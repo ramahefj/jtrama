@@ -8,7 +8,7 @@
 <head>
 </head>
 
-<body onload="donee">
+<body>
    
    <div id="map" style="width:400px;height:400px;background:yellow"></div>
  
@@ -43,6 +43,17 @@
   
  <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAolUiXb2U1y_ElGfHEYKuHCt0TWRVi0c4 &callback=myMap">
   </script>
+	
+<canvas id="myCanvas"
+	width="600px" height="400px">
+<script> 
+	var canvas=document.getElementById("myCanvas");
+	var ctx=canvas.getContext("2d");
+	ctx.fillStyle="#"
+	ctx.moveTo(200px,200px)
+	ctx.lineTo(250px,100px)
+	ctx.stroke()
+</script>
   
 </body>
 
