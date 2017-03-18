@@ -1,0 +1,135 @@
+<!Doctype html>
+<htlm>
+
+<script
+			  src="https://code.jquery.com/jquery-3.1.1.js"
+			  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+			  crossorigin="anonymous"></script>
+
+<script src="ForumJS.js"></script>
+
+<link rel ="stylesheet"
+type ="text/css"
+href ="ForumCSS.css">
+
+			  
+<title>
+Danse Concept Contact
+</title>
+
+<body>
+<!--Nom du forum-->
+<div class="nom">
+	<h1>DANSE Concept</h1>
+
+</div>
+
+<!--Image central-->
+<div class='image1'>
+	<img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvVdXJ4r0vQRvx8UN0vDxr5A526mgFYsBMBy767zfV6E84BwuoVw" width="60%" height="10%">
+</div>
+
+<!-- Liens des autres onglets-->
+<div class='Liens'>
+
+	<ul>
+<li> <a href ="ForumHTML.html">Accueil</a> </li>
+<li> <a href ="ForumDiscuter.html">Discuter</a> </li>
+<li> <a href ="ForumContact.html">Nous Contacter</a> </li>
+	</ul>
+</div>
+	
+
+<!-- Carte sur google map-->
+  
+<script
+			  src="https://code.jquery.com/jquery-3.1.1.js"
+			  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+			  crossorigin="anonymous"></script>
+<head>
+</head>
+
+<body>
+   <!--Localisation sur google map-->
+   <div class="block3">
+   <div id="map" style="width:400px;height:400px;background:yellow"></div>
+ 
+  
+   <script>
+     function myMap() {
+    var mapOptions = {
+      center: new google.maps.LatLng(45.9192139, 6.141949899999986),
+      zoom: 10,
+      mapTypeId: google.maps.MapTypeId.HYBRID
+    }
+    var myCenter = new google.maps.LatLng(45.91862260000001,6.157968500000038);
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    var marker = new google.maps.Marker({position:myCenter});
+    marker.setMap(map);
+    var myCenter2 = new google.maps.LatLng(45.9144629,6.114150099999961);
+    var marker = new google.maps.Marker({position:myCenter2});
+        marker.setMap(map);
+  }
+  </script>
+    
+<script>
+	function donee() {
+		$.get('https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22nome%2C%20ak%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys', function(data,status){
+   alert(data.query.created);
+   alert(data.query);
+   });
+	}
+                        
+   </script>
+   
+  
+ <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAolUiXb2U1y_ElGfHEYKuHCt0TWRVi0c4 &callback=myMap">
+  </script>
+  </div> <!--Div qui ferme la carte-->
+  
+  <!--E-mail-->
+  <div class='formulaire'>
+<form onsubmit="display()">
+
+	<fieldset>
+		<legend>Inscription a la newlster</legend>
+		<input type="radio" name="gender" value="Mr" checked>Mr.<br> 
+		<input type="radio" name="gender" value="Mrs">Mme.<br> 
+		<input type="radio" name="gender" value="Ms">Ms.<br>
+		
+		Prenom: <br>
+		<input type="text" id="firstname" placeholder="Prenom"><br> 
+							
+		
+		Nom: <br>
+		<input type="text" id="lastname" placeholder="Nom"><br>
+		
+		E mail:<br>
+		<input type="email" id="email" placeholder="E-mail"><br>
+		
+	</fieldset>
+	<input type="submit" value="Inscription">
+</form>
+</div>
+
+  <!-- Adresses -->
+  <div class='adresse'>
+
+	<p> 9 Boulevard du Fier, 74000 Annecy, France</p>
+	<p> IAE Savoie Mont-Blanc, Annecy-le-Vieux, France </p>
+
+</div>
+
+<div class="social">
+	<ul>
+		<li> <B>Facebook :</B><a href="https://fr-fr.facebook.com/"> Danse Concept</a> </li>
+		<li> <B>Twitter :</B><a href="https://twitter.com/?lang=fr">@DanseConcept</a></li>
+		<li> <B>Instagram :</B><a href ="https://www.instagram.com/?hl=fr"> D-Concept</a> </li>
+		</ul>
+</div>
+
+</div> <!--Div qui ferme le block3-->
+</body>
+
+
+</html>
