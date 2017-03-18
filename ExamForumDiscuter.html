@@ -1,0 +1,135 @@
+<!Doctype html>
+<htlm>
+
+<script
+			  src="https://code.jquery.com/jquery-3.1.1.js"
+			  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+			  crossorigin="anonymous"></script>
+
+<script src="ForumJS.js"></script>
+
+<link rel ="stylesheet"
+type ="text/css"
+href ="ForumCSS.css">
+
+
+  
+<title>
+Danse Concept Discuter
+</title>
+
+<head>
+
+</head>
+
+
+<body>
+<!--Nom du forum-->
+<div class="nom">
+	<h1>DANSE Concept</h1>
+
+</div>
+
+<!--Image central-->
+<div class='image1'>
+	<img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvVdXJ4r0vQRvx8UN0vDxr5A526mgFYsBMBy767zfV6E84BwuoVw" width="60%" height="10%">
+</div>
+
+<!-- Liens des autres onglets-->
+<div class='Liens'>
+
+	<ul>
+<li> <a href ="ForumHTML.html">Accueil</a> </li>
+<li> <a href ="ForumDiscuter.html">Discuter</a> </li>
+<li> <a href ="ForumContact.html">Nous Contacter</a> </li>
+	</ul>
+</div>
+
+<!--Question/réponse-->
+<div class="regles">
+	<p><a href ="ForumContact.html">Inscrivez-vous</a> pour reçevoir directement les réponses de vos messages et pour dialoguer sur le tchat avec le reste de la communauté<p>
+</div>
+<div class= "sanction">
+	<p>Avant de poster un sujet assuré vous que celui ne soit pas deja explicité dans un autre post. Tout langage irréspectieu entrainera une suppression du compte utilisateur et pourra etre poursuivis en justice. <p>
+</div>
+
+<!--posts-->
+	<div id="mesposts">
+		<span id="blog">
+		<h2>SUJETS POSTES:</h2>
+		<ul id="entries">
+		
+			<p>UTILISATEUR<p>
+			<img src ="https://image.freepik.com/icones-gratuites/tete-chauve-avec-point-d-39-interrogation_318-49294.jpg" width="20%" height="20%">
+						
+		</ul>
+		
+	
+
+
+		</span>
+
+	</div>
+
+	
+<!--Message-->
+
+<div class="message">
+	<form>
+	<fieldset>
+
+		
+		<legend> Mon message </legend>
+			<p>
+            <input type="button" value="G" />
+            <input type="button" value="I" />
+            <input type="button" value="Lien" />
+            <input type="button" value="Image" />
+            <select onchange="insertTag('<' + this.options[this.selectedIndex].value + '>', '</' + this.options[this.selectedIndex].value + '>');">
+                <option value="none" class="selected" selected="selected">Taille</option>
+                <option value="ttpetit">Très très petit</option>
+                <option value="tpetit">Très petit</option>
+                <option value="petit">Petit</option>
+                <option value="gros">Gros</option>
+                <option value="tgros">Très gros</option>
+                <option value="ttgros">Très très gros</option>
+            </select>
+        <p>
+		<input type="text" size="100" style="height:250px;" id="post" placeholder="Entrer votre message">	
+ 	</fieldset>
+	
+	<a href="#" id="add"><b>Envoyer</b></a>
+	</form>
+</div>
+	
+<script>
+$(document).ready(function(){
+
+	localStorage.clear();
+
+    $("#add").click(function(){
+        var content = $("#entries").html();
+        $("#entries").append("<li>" + $("#post").val() + "</li>");
+        posts = localStorage.getItem("posts");
+
+        if (posts == null) {
+        	var posts = [];
+        	posts.push($("#post").val());
+        }
+        else {
+        	posts = JSON.parse(posts);
+        	posts.push($("#post").val());
+        }
+
+        localStorage.setItem("posts", JSON.stringify(posts));
+        console.log(localStorage);
+    });
+});
+
+</script>
+
+
+
+</body>
+
+</html>
